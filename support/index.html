@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quieta Scan Support</title>
+  <meta name="description" content="Support for Quieta Scan, the standalone iOS utility that turns flyers and schedules into reviewed Apple Calendar events.">
+  <link rel="canonical" href="https://jshaffield.github.io/quietascan-support/support/">
+  <style>
+    :root {
+      --ink: #13201f;
+      --pine: #214642;
+      --moss: #5f7d4f;
+      --cream: #f7f4ea;
+      --paper: #fffaf0;
+      --gold: #d3a84f;
+      --coral: #ca6b57;
+      --line: rgba(247, 244, 234, 0.18);
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+    }
+    main {
+      margin: 0 auto;
+      max-width: 920px;
+      padding: 44px 22px 56px;
+    }
+    .brand {
+      align-items: center;
+      display: flex;
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+    .brand img {
+      display: block;
+      height: auto;
+      max-width: 220px;
+      width: 45vw;
+    }
+    .pill {
+      background: rgba(211, 168, 79, 0.14);
+      border: 1px solid rgba(211, 168, 79, 0.34);
+      border-radius: 999px;
+      color: #f1d99d;
+      display: inline-flex;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 7px 12px;
+    }
+    h1 {
+      font-size: clamp(38px, 7vw, 72px);
+      line-height: 0.96;
+      margin: 0 0 20px;
+      max-width: 780px;
+    }
+    h2 {
+      color: #e9d79f;
+      font-size: 20px;
+      margin: 0 0 12px;
+    }
+    p {
+      color: rgba(247, 244, 234, 0.82);
+      font-size: 17px;
+      margin: 0;
+      max-width: 700px;
+    }
+    .lead {
+      font-size: 20px;
+      margin-bottom: 34px;
+    }
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 30px 0 36px;
+    }
+    .panel {
+      background: var(--pine);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+    }
+    .panel strong {
+      color: var(--cream);
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .panel span {
+      color: rgba(247, 244, 234, 0.76);
+      display: block;
+      font-size: 15px;
+    }
+    .faq {
+      border-top: 1px solid var(--line);
+      margin-top: 20px;
+    }
+    .item {
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0;
+    }
+    a {
+      color: #f1d99d;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    .contact {
+      background: var(--paper);
+      border-radius: 8px;
+      color: var(--ink);
+      margin-top: 36px;
+      padding: 24px;
+    }
+    .contact h2 { color: var(--ink); }
+    .contact p { color: #41524f; }
+    .contact a { color: var(--pine); }
+    footer {
+      color: rgba(247, 244, 234, 0.54);
+      font-size: 13px;
+      margin-top: 36px;
+    }
+    footer a { color: rgba(247, 244, 234, 0.74); }
+    @media (max-width: 680px) {
+      .brand { display: block; }
+      .brand img { margin-bottom: 16px; width: 240px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">
+      <img src="../assets/brand/quietascan-logo-stacked-light-bg.png" alt="Quieta Scan">
+      <span class="pill">Standalone iOS support</span>
+    </div>
+
+    <h1>Help for turning paper schedules into calendar events.</h1>
+    <p class="lead">Quieta Scan is separate from the full Quieta family app. It does not use Quieta family sync, Stream, Q codes, subscriptions, or a Quieta account.</p>
+
+    <section class="grid" aria-label="Quick facts">
+      <div class="panel">
+        <strong>Core flow</strong>
+        <span>Scan a flyer, review extracted event drafts, then save approved events to Apple Calendar.</span>
+      </div>
+      <div class="panel">
+        <strong>Simulator review</strong>
+        <span>Use Sample Flyer on simulator. VisionKit document scanning is available on physical iPhone devices.</span>
+      </div>
+      <div class="panel">
+        <strong>Permissions</strong>
+        <span>Camera is used for document scanning. Calendar permission is requested only when you export events.</span>
+      </div>
+      <div class="panel">
+        <strong>Data</strong>
+        <span>Flyer text is processed for calendar drafting on the device. No Quieta account or backend sync is required.</span>
+      </div>
+    </section>
+
+    <section class="faq" aria-label="Frequently asked questions">
+      <div class="item">
+        <h2>How do I test scanning?</h2>
+        <p>On a physical iPhone, tap Start Scan and point the camera at a flyer or printed schedule. On simulator, tap Sample Flyer to load a representative schedule into the review queue.</p>
+      </div>
+      <div class="item">
+        <h2>Why does calendar export ask for permission?</h2>
+        <p>Quieta Scan uses Apple EventKit to save reviewed events. iOS requires calendar permission before any event can be written.</p>
+      </div>
+      <div class="item">
+        <h2>Is this the same product as Quieta?</h2>
+        <p>No. Quieta Scan is a focused utility for flyer-to-calendar capture. It does not include Quieta family sync, shared Stream, Q codes, or subscription membership tiers.</p>
+      </div>
+      <div class="item">
+        <h2>Where can I ask for help?</h2>
+        <p>Email <a href="mailto:support@quieta.co?subject=Quieta%20Scan%20Support">support@quieta.co</a> with “Quieta Scan” in the subject line and include your iPhone model, iOS version, and a short description of what happened.</p>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact Support</h2>
+      <p>For Quieta Scan support, email <a href="mailto:support@quieta.co?subject=Quieta%20Scan%20Support">support@quieta.co</a>. For privacy details, read the <a href="../privacy/">Quieta Scan Privacy Policy</a>.</p>
+    </section>
+
+    <footer>
+      Quieta Scan support page. Separate from the full Quieta app support center.
+      <br>
+      <a href="../privacy/">Privacy</a>
+    </footer>
+  </main>
+</body>
+</html>
